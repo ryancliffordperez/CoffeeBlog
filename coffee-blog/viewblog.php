@@ -83,18 +83,25 @@
 
 
 				
+			<?php
+			$blogs = simplexml_load_file("../files/blogs.xml");
+			if(isset($_REQUEST['id'])){
 
+				foreach ($blogs->blog as $blog){
+					
+					if($blog->id == $_REQUEST['id']){ 
+			?>
 
 			<!-- Start Generic Area -->
 			<section class="about-generic-area section-gap">
 				<div class="container border-top-generic">
-					<h3 class="about-title mb-30">  </h3>
+					<h3 class="about-title mb-30"> <?php echo $blog->title; ?> </h3>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="img-text">
 								<img src="img/a.jpg" alt="" class="img-fluid float-left mr-20 mb-20">
-								<p></p>
-								<p></p>
+								<p> <?php echo $blog->author." - ".$blog->date; ?> </p>
+								<p> <?php echo $blog->content; ?> </p>
 
 								<a href="index.php#blog" class="primary-btn text-uppercase">Back</a>
 							</div>
@@ -105,6 +112,16 @@
 				</div>
 			</section>
 			<!-- End Generic Start -->	
+
+
+			<?php 
+						}//end of if
+					}//end of foreach
+				} //end of isset
+			?>
+
+
+
 
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">

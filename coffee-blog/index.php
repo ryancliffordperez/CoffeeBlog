@@ -91,18 +91,33 @@
 					</div>						
 					
 						<div class="row">
-					
+						
+						<?php 
+						//load through all the data and display each rows
+						$blogs = simplexml_load_file("../files/blogs.xml");
+
+						//loop through all the data
+						foreach ($blogs->blog as $rows) { 
+
+						?>
+
 						<div class="col-lg-6 col-sm-6 single-blog">
-							<a href="viewblog.php?id="><h4> Title </h4></a>
+							<a href="viewblog.php?id=<?php echo $rows->id; ?>"><h4> <?php echo $rows->title; ?> </h4></a>
 							<p>
-								Content shorten
+								<?php echo mb_strimwidth($rows->content, 0, 200, ". read more..."); ?> 
 							</p>
 							<p class="post-date">
-								author and date
+								<?php echo $rows->author." - ".$rows->date; ?>
 							</p>
 						</div>
+
+						<?php 
+							}
+						?>
 					
 					</div>
+
+
 				</div>	
 			</section>
 			<!-- End blog Area -->

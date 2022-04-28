@@ -8,6 +8,7 @@
             </div>
             <div class="modal-body">
 			<div class="container-fluid">
+				
 			<form method="POST" action="edit_blog.php">
 				<div class="row form-group">
 					<div class="col-sm-2">
@@ -58,6 +59,7 @@
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
                 <button type="submit" name="edit_blog" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Update Blog</a>
 			</form>
             </div>

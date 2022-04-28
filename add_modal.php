@@ -16,9 +16,11 @@
 					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">Blog ID:</label>
 					</div>
+					
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="blog_id" readonly value="<?php echo strtotime(date('Y-m-d H:i:s')); ?>">
+						<input type="text" class="form-control" name="blog_id" readonly value="<?php echo  strtotime(date('Y-m-d H:i:s')); ?>"/>
 					</div>
+
 				</div>
 
 				<div class="row form-group">
@@ -43,7 +45,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Date Published:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" required readonly name="blog_date" value="<?php echo date('M/d/Y') ?>">
+						<input type="text" class="form-control" required readonly name="blog_date" value="<?php echo date('M/d/Y'); ?>">
 					</div>
 				</div>
 
@@ -62,6 +64,7 @@
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                
                 <button type="submit" name="publish" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Publish </a>
 			</form>
             </div>
